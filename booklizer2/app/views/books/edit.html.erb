@@ -1,0 +1,19 @@
+<%= form_for @book do |f| %>
+  <p>Enter Book's title:
+    <%= f.text_field :title, placeholder: "Book's Title" %>
+  </p>
+
+  <p>Enter price:
+    <%= f.number_field :price, placeholder: "Price" %>
+  </p>
+
+    <p>Enter subject id:
+    <%= f.number_field :subject_id, placeholder: "Subject ID" %>
+  </p>
+
+    <p>Enter description:
+    <%= f.text_field :description, placeholder: "description" %>
+  </p>
+
+  <%= f.submit %>
+<% end %>

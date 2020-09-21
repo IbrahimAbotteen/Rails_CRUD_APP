@@ -5,9 +5,9 @@ class BooksController < ApplicationController
         @books = Book.all
         #res.render('index', locals: { books: @books })
         render :index
-     end
+    end
 
-     def create 
+    def create 
         @book = Book.new(book_params)
         if @book.save
           redirect_to @book
@@ -15,12 +15,25 @@ class BooksController < ApplicationController
           # This line overrides the default rendering behavior, which
           # would have been to render the "create" view.
           render "new"      
-      end
+        end
     end
 
      def show
         @book = set_book
      end
+
+    def edit
+        @book = set_book
+    end
+     
+    def update
+        @book =set_book
+        if @book.update(book_params)
+        redirect_to(@book)
+        else
+        render "edit"
+        end
+    end
 
 
      private 
